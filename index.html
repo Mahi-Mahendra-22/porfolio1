@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif,sans-serif;
+            background-color: rgb(4, 102, 31);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            border-radius: 15x;
+        }
+        .card{
+            background-color: rgb(18, 139, 62);
+            border-radius: 15px;
+            
+            
+            width: 350px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0,2);
+            animation: fadeln 1s ease forwards;
+        }
+        .card img{
+            width: 120px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid rgb(58, 189, 90);
+            object-fit: cover;
+            animation: popln 0.8s ease forwards;
+        }
+        .card h2{
+            margin: 15px 0 5x 0;
+            font-size: 22px;
+            color: black;
+        }
+        .card h4{
+            margin: 0 0 15px 0;
+            font-weight: normal;
+            color: black;
+        }
+        .card p{
+            font-size: 14px;
+            color: rgb(6, 11, 2);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .skills{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .skills span{
+            background-color: rgb(6, 73, 29);
+            color: beige;
+            padding: 10px 20px;
+            border-radius: 12px;
+            border: 2px solid ;
+            font-size: 12px;
+            transition:transform 0.3s,background-color 0.3s;
+            cursor: pointer;
+        }
+        .skills span:hover{
+            transform: scale(1.1);
+            background-color: rgb(9, 174, 64);
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .btn button{
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .btn-contact{
+            background-color: rgb(2, 76, 18);
+            color: aliceblue;
+            border-radius: 50px;
+            border: 1px solid wheat
+        }
+        .btn-contact:hover{
+            background-color: rgb(24, 200, 68);
+            transform: scale(1.05);
+        }
+        .btn-cv{
+            background-color: rgb(4, 80, 13);
+            color: aliceblue;
+            border-radius: 50px;
+            border: 1px solid wheat;
+        }
+        .btn-cv:hover{
+            background-color: rgb(20, 213, 75);
+            transform: scale(1.05);
+        }
+        .footer{
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: rgb(149, 149, 7);
+            margin: 10px;
+        }
+
+        @keyframes fadeIn{
+            from{opacity: 0;transform: translate(20px);}
+            to{opacity: 1;transform: translate(0);}
+        }
+        @keyframes popIn{
+            from{opacity: 0;transform: scale(0.5);}
+            to{opacity: 1;transform: scale(1);}
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="photo.jpg.jpeg" alt="Profile Photo">
+
+        <h2>Mahendra Y</h2>
+        <h4>Bachelor of Computer Application Stuudent</h4>
+        <p>
+            Iam a BCA student from SJR college.
+            learning about new technologies always fascinates me.
+            I aspire to build new tech which solving day-to-day problems. 
+        </p>
+        <div class ="skills">
+            <span>Python Programming</span>
+            <span>C</span>
+            <span>Web Programming</span>
+            <span>SQL</span>
+            <span>Java</span>
+        </div>
+        <div class="footer">
+            <button class="btn-contact">Contact Me</button>
+            <button class="btn-cv">Download CV</button>
+        </div>
+        </div>
+        <script>
+            document.querySelector(".btn-contact").addEventListener("click",function(){
+                alert("Contact details:\n\nEmail:mahendjj@gmail.com\nPhone:+91 9740500715\nInsta:mahi_in_yami");
+            });
+            document.querySelector(".btn-cv").addEventListener("click",function(){
+                alert("cv Download will start soon(demo).");
+            });
+            let skills=document.querySelectorAll(".skills span");
+
+            skills.forEach(function(skill){
+                skill.addEventListener("click",function(){
+                    alert("skill:"+this.innerText);
+                });
+            });
+            document.querySelector(".card img").addEventListener("click",function(){
+                alert("Hello Welcome To My Portflio!");
+            });
+
+        </script>
+</body>
+</html>
